@@ -1,0 +1,210 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Burger Bond</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/responsive.css"> 
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-5 col-lg-5">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="Menu.html">Menu</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="blog.html">blog</a></li>
+                                        <li><a class="active" href="order.html">order</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo-img">
+                                <a href="index.html">
+                                    <img src="/img/bond new img/BondLogo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 d-none d-lg-block">
+                            <div class="book_room">
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="https://www.instagram.com/burgerbondvn/">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="book_btn d-none d-xl-block">
+                                    <a class="#" href="#">0862 150 924</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- Order section -->
+    <div class="container my-5">
+      <h2 class="text-center mb-4 fw-bold text-warning">
+        <img src="https://img.icons8.com/color/48/000000/hamburger.png" width="36" class="me-2" />
+        Burger Bond
+      </h2>
+    
+      <!-- Navigation Buttons -->
+      <div class="text-center mb-5">
+        <button onclick="showSection('burgers')" class="btn btn-outline-warning m-2">Burgers</button>
+        <button onclick="showSection('sides')" class="btn btn-outline-warning m-2">Sides</button>
+        <button onclick="showSection('drinks')" class="btn btn-outline-warning m-2">Drinks</button>
+      </div>
+    
+      <!-- Burgers Section -->
+      <div id="burgers" class="menu-section">
+        <h4 class="text-warning mb-4">Burgers</h4>
+    
+        <!-- Item -->
+        <div class="card mb-4 shadow-sm border-0" style="max-width: 100%;">
+          <div class="row g-0 align-items-center">
+            <!-- Image -->
+            <div class="col-md-4">
+              <img src="/img/Order/Pork Miso.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Burger Heo Miso">
+            </div>
+        
+            <!-- Content -->
+            <div class="col-md-8 p-4 bg-light">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0 fw-bold">Burger Heo Miso <span class="badge bg-warning text-dark">New</span></h5>
+                <span class="text-success fw-bold fs-5">40k</span>
+              </div>
+        
+              <p class="text-muted">description món tại đây</p>
+        
+              <div class="d-flex justify-content-between align-items-center mt-4">
+                <!-- Quantity selector -->
+                <div class="input-group" style="width: 120px;">
+                  <button class="btn btn-outline-warning" onclick="updateQuantity(this, -1)">−</button>
+                  <input type="text" class="form-control text-center" value="1" readonly>
+                  <button class="btn btn-outline-warning" onclick="updateQuantity(this, 1)">+</button>
+                </div>
+        
+                <!-- Add button -->
+                <button class="btn btn-primary px-4">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Another Item -->
+        <div class="row g-0 menu-card mb-4">
+          <div class="col-md-4">
+            <img src="/img/Order/CrispyAF.jpg" class="img-fluid w-100 menu-image" alt="Burger Image">
+          </div>
+          <div class="col-md-8 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold mb-2">Burger Gà Giòn</h5>
+              <p class="text-muted mb-3">description món tại đây</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-success fw-bold fs-5">45k</span>
+              <div class="quantity-selector">
+                <button class="quantity-btn" onclick="updateQuantity(this, -1)">−</button>
+                <input type="text" value="0" class="quantity-input" readonly>
+                <button class="quantity-btn" onclick="updateQuantity(this, 1)">+</button>
+              </div>
+              <button class="btn btn-add">Add</button>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- Sides & Drinks would go here -->
+    </div>
+    
+    
+
+      <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script>
+      function showSection(sectionId) {
+        document.querySelectorAll('.menu-section').forEach(section => {
+          section.style.display = 'none';
+        });
+        document.getElementById(sectionId).style.display = 'block';
+      }
+    
+      function updateQuantity(button, change) {
+        const input = button.parentElement.querySelector('input');
+        let value = parseInt(input.value) + change;
+        input.value = Math.max(0, value);
+      }
+    </script>
