@@ -1,0 +1,244 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Burger Bond</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/responsive.css"> 
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+
+  <body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-5 col-lg-5">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="Menu.html">Menu</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="blog.html">blog</a></li>
+                                        <li><a href="order.html">order</a></li>
+                                        <li><a class="active" href="cart.html">cart</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo-img">
+                                <a href="index.html">
+                                    <img src="/img/bond new img/BondLogo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 d-none d-lg-block">
+                            <div class="book_room">
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="https://www.instagram.com/burgerbondvn/">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="book_btn d-none d-xl-block">
+                                    <a class="#" href="#">0862 150 924</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+  <div class="checkout-container">
+    <div class="order-summary">
+      <h4>Order Summary</h4>
+      <div id="cart-items-summary">
+        <!-- Dynamic cart items will be inserted here -->
+      </div>
+      <div class="checkout-total">
+        Tổng: <span id="cart-total-checkout">0k</span>
+      </div>
+    </div>
+
+    <h4>Thông tin giao hàng</h4>
+    <form id="checkout-form">
+      <!-- Name -->
+      <div class="checkout-input">
+        <label for="name">Tên</label>
+        <input type="text" id="name" name="name" placeholder="Vui lòng điền tên" required>
+      </div>
+      
+      <!-- Phone -->
+      <div class="checkout-input">
+        <label for="phone">SĐT</label>
+        <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại tại đây" required>
+      </div>
+      
+      <!-- Address -->
+      <div class="checkout-input">
+        <label for="address">Địa chỉ giao hàng</label>
+        <textarea id="address" name="address" placeholder="Hãy điền địa chỉ giao hàng" required></textarea>
+      </div>
+      
+      <!-- Notes -->
+      <div class="checkout-input">
+        <label for="notes">Ghi chú (Nếu có)</label>
+        <textarea id="notes" name="notes" placeholder="Ghi chú tại đây"></textarea>
+      </div>
+
+      <!-- Checkout Button -->
+      <button type="submit" class="btn-checkout">Đặt hàng</button>
+    </form>
+  </div>
+<!-- Cart script -->
+<script>
+  // Helper to get cart from localStorage
+  function getCart() {
+    try {
+      return JSON.parse(localStorage.getItem('cart')) || [];
+    } catch (error) {
+      console.error('Error parsing cart from localStorage:', error);
+      return [];
+    }
+  }
+
+  // Helper to save cart to localStorage
+  function saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  // Format numbers like 40.000đ (Vietnam style)
+  function formatCurrencyVND(number) {
+    return new Intl.NumberFormat('vi-VN').format(number) + 'đ';
+  }
+
+  // Display the cart contents and total
+  function displayCartSummary() {
+    const cart = getCart();
+    const cartContainer = document.getElementById('cart-items-summary');
+    const totalPriceEl = document.getElementById('cart-total-checkout');
+    let total = 0;
+
+    cartContainer.innerHTML = '';
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML = '<p>Giỏ hàng trống.</p>';
+      totalPriceEl.textContent = formatCurrencyVND(0);
+      return;
+    }
+
+    cart.forEach((item, index) => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+
+      const cartItem = document.createElement('div');
+      cartItem.className = 'checkout-item';
+      cartItem.innerHTML = `
+        <div class="checkout-item-content">
+          <img src="${item.image}" alt="${item.name}" class="checkout-item-img" />
+          <div>
+            <h5>${item.name} (x${item.quantity})</h5>
+            <span>${formatCurrencyVND(itemTotal)}</span>
+          </div>
+          <button class="remove-item-btn" data-index="${index}">✖</button>
+        </div>
+      `;
+
+      cartContainer.appendChild(cartItem);
+    });
+
+    totalPriceEl.textContent = formatCurrencyVND(total);
+
+    // Allow item removal
+    document.querySelectorAll('.remove-item-btn').forEach(button => {
+      button.addEventListener('click', function () {
+        const index = this.getAttribute('data-index');
+        cart.splice(index, 1); // remove item
+        saveCart(cart); // save updated cart
+        displayCartSummary(); // re-render
+      });
+    });
+  }
+
+  // Initialize the cart summary when page loads
+  document.addEventListener('DOMContentLoaded', displayCartSummary);
+</script>
+  
+
+  <!-- Bootstrap JS (optional for further interactions) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS here -->
+  <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+  <script src="js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/ajax-form.js"></script>
+  <script src="js/waypoints.min.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/imagesloaded.pkgd.min.js"></script>
+  <script src="js/scrollIt.js"></script>
+  <script src="js/jquery.scrollUp.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/nice-select.min.js"></script>
+  <script src="js/jquery.slicknav.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/plugins.js"></script>
+
+  <!--contact js-->
+  <script src="js/contact.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/jquery.form.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/mail-script.js"></script>
+
+  <script src="js/main.js"></script>
+  
+</body>
+
+</html>

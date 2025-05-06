@@ -48,6 +48,7 @@
                                         <li><a href="about.html">About</a></li>
                                         <li><a href="blog.html">blog</a></li>
                                         <li><a class="active" href="order.html">order</a></li>
+                                        <li><a href="cart.html">cart</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -90,27 +91,27 @@
     <!-- Order section -->
     <div class="container my-5">
       <h2 class="text-center mb-4 fw-bold text-warning">
-        <img src="https://img.icons8.com/color/48/000000/hamburger.png" width="36" class="me-2" />
+        
         Burger Bond
       </h2>
     
       <!-- Navigation Buttons -->
-      <div class="text-center mb-5">
-        <button onclick="showSection('burgers')" class="btn btn-outline-warning m-2">Burgers</button>
-        <button onclick="showSection('sides')" class="btn btn-outline-warning m-2">Sides</button>
-        <button onclick="showSection('drinks')" class="btn btn-outline-warning m-2">Drinks</button>
-      </div>
+<div class="text-center mb-5">
+  <a href="#burgers" class="btn btn-outline-warning m-2">Burgers</a>
+  <a href="#sides" class="btn btn-outline-warning m-2">Sides</a>
+  <a href="#drinks" class="btn btn-outline-warning m-2">Drinks</a>
+</div>
     
       <!-- Burgers Section -->
       <div id="burgers" class="menu-section">
         <h4 class="text-warning mb-4">Burgers</h4>
     
         <!-- Item -->
-        <div class="card mb-4 shadow-sm border-0" style="max-width: 100%;">
+        <div class="card mb-4 shadow-sm border-0" style="max-width: 80%;">
           <div class="row g-0 align-items-center">
             <!-- Image -->
             <div class="col-md-4">
-              <img src="/img/Order/Pork Miso.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Burger Heo Miso">
+              <img src="/img/Order/1.png" class="img-fluid rounded-start h-100 object-fit-cover" alt="Burger Heo Miso">
             </div>
         
             <!-- Content -->
@@ -131,38 +132,163 @@
                 </div>
         
                 <!-- Add button -->
-                <button class="btn btn-primary px-4">Add</button>
+                <button class="btn btn-primary px-4" onclick="addToCart('Burger Heo Miso', 40000, '/img/Order/1.png', this)">Add</button>
               </div>
             </div>
           </div>
         </div>
     
         <!-- Another Item -->
-        <div class="row g-0 menu-card mb-4">
+       <!-- Item -->
+       <div class="card mb-4 shadow-sm border-0" style="max-width: 80%;">
+        <div class="row g-0 align-items-center">
+          <!-- Image -->
           <div class="col-md-4">
-            <img src="/img/Order/CrispyAF.jpg" class="img-fluid w-100 menu-image" alt="Burger Image">
+            <img src="/img/Order/3.png" class="img-fluid rounded-start h-100 object-fit-cover" alt="Burger Heo Miso">
           </div>
-          <div class="col-md-8 p-4 d-flex flex-column justify-content-between">
-            <div>
-              <h5 class="fw-bold mb-2">Burger Gà Giòn</h5>
-              <p class="text-muted mb-3">description món tại đây</p>
+      
+          <!-- Content -->
+          <div class="col-md-8 p-4 bg-light">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h5 class="mb-0 fw-bold">Burger Gà Giòn <span class="badge bg-warning text-dark">New</span></h5>
+              <span class="text-success fw-bold fs-5">40k</span>
             </div>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="text-success fw-bold fs-5">45k</span>
-              <div class="quantity-selector">
-                <button class="quantity-btn" onclick="updateQuantity(this, -1)">−</button>
-                <input type="text" value="0" class="quantity-input" readonly>
-                <button class="quantity-btn" onclick="updateQuantity(this, 1)">+</button>
+      
+            <p class="text-muted">description món tại đây</p>
+      
+            <div class="d-flex justify-content-between align-items-center mt-4">
+              <!-- Quantity selector -->
+              <div class="input-group" style="width: 120px;">
+                <button class="btn btn-outline-warning" onclick="updateQuantity(this, -1)">−</button>
+                <input type="text" class="form-control text-center" value="1" readonly>
+                <button class="btn btn-outline-warning" onclick="updateQuantity(this, 1)">+</button>
               </div>
-              <button class="btn btn-add">Add</button>
+      
+              <!-- Add button -->
+              <button class="btn btn-primary px-4" onclick="addToCart('Burger Heo Miso', 40000, '/img/Order/1.png', this)">Add</button>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Item -->
+      <div class="card mb-4 shadow-sm border-0" style="max-width: 80%;">
+        <div class="row g-0 align-items-center">
+          <!-- Image -->
+          <div class="col-md-4">
+            <img src="/img/Order/4.png" class="img-fluid rounded-start h-100 object-fit-cover" alt="Burger Heo Miso">
+          </div>
+      
+          <!-- Content -->
+          <div class="col-md-8 p-4 bg-light">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h5 class="mb-0 fw-bold">Burger Heo Miso <span class="badge bg-warning text-dark">New</span></h5>
+              <span class="text-success fw-bold fs-5">40k</span>
+            </div>
+      
+            <p class="text-muted">description món tại đây</p>
+      
+            <div class="d-flex justify-content-between align-items-center mt-4">
+              <!-- Quantity selector -->
+              <div class="input-group" style="width: 120px;">
+                <button class="btn btn-outline-warning" onclick="updateQuantity(this, -1)">−</button>
+                <input type="text" class="form-control text-center" value="1" readonly>
+                <button class="btn btn-outline-warning" onclick="updateQuantity(this, 1)">+</button>
+              </div>
+      
+              <!-- Add button -->
+              <button class="btn btn-primary px-4" onclick="addToCart('Burger Heo Miso', 40000, this)">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="card mb-4 shadow-sm border-0" style="max-width: 80%;">
+        <div class="row g-0 align-items-center">
+          <!-- Image -->
+          <div class="col-md-4">
+            <img src="/img/Order/5.png" class="img-fluid rounded-start h-100 object-fit-cover" alt="Burger Heo Miso">
+          </div>
+      
+          <!-- Content -->
+          <div class="col-md-8 p-4 bg-light">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h5 class="mb-0 fw-bold">Burger Heo Miso <span class="badge bg-warning text-dark">New</span></h5>
+              <span class="text-success fw-bold fs-5">40k</span>
+            </div>
+      
+            <p class="text-muted">description món tại đây</p>
+      
+            <div class="d-flex justify-content-between align-items-center mt-4">
+              <!-- Quantity selector -->
+              <div class="input-group" style="width: 120px;">
+                <button class="btn btn-outline-warning" onclick="updateQuantity(this, -1)">−</button>
+                <input type="text" class="form-control text-center" value="1" readonly>
+                <button class="btn btn-outline-warning" onclick="updateQuantity(this, 1)">+</button>
+              </div>
+      
+              <!-- Add button -->
+              <button class="btn btn-primary px-4" onclick="addToCart('Burger Heo Miso', 40000, this)">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item -->
+      <div class="card mb-4 shadow-sm border-0" style="max-width: 80%;">
+        <div class="row g-0 align-items-center">
+          <!-- Image -->
+          <div class="col-md-4">
+            <img src="/img/Order/2.png" class="img-fluid rounded-start h-100 object-fit-cover" alt="Burger Heo Miso">
+          </div>
+      
+          <!-- Content -->
+          <div class="col-md-8 p-4 bg-light">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h5 class="mb-0 fw-bold">Burger Heo Miso <span class="badge bg-warning text-dark">New</span></h5>
+              <span class="text-success fw-bold fs-5">40k</span>
+            </div>
+      
+            <p class="text-muted">description món tại đây</p>
+      
+            <div class="d-flex justify-content-between align-items-center mt-4">
+              <!-- Quantity selector -->
+              <div class="input-group" style="width: 120px;">
+                <button class="btn btn-outline-warning" onclick="updateQuantity(this, -1)">−</button>
+                <input type="text" class="form-control text-center" value="1" readonly>
+                <button class="btn btn-outline-warning" onclick="updateQuantity(this, 1)">+</button>
+              </div>
+      
+              <!-- Add button -->
+              <button class="btn btn-primary px-4" onclick="addToCart('Burger Heo Miso', 40000, this)">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
     
       </div>
     
-      <!-- Sides & Drinks would go here -->
-    </div>
+      <!-- Sides Section -->
+<div id="sides" class="menu-section">
+  <h4 class="text-warning mb-4">Sides</h4>
+  <!-- Add your sides content here -->
+</div>
+
+<!-- Drinks Section -->
+<div id="drinks" class="menu-section">
+  <h4 class="text-warning mb-4">Drinks</h4>
+  <!-- Add your drinks content here -->
+</div>
+    <!-- Cart Section -->
+<div class="container my-5" id="cart-section" style="display: none;">
+  <h4 class="text-warning mb-3">🛒 Your Cart</h4>
+  <ul class="list-group mb-3" id="cart-list"></ul>
+  <div class="d-flex justify-content-between align-items-center">
+    <h5 class="fw-bold">Total: <span class="text-success" id="total-price">0k</span></h5>
+    <button class="btn btn-success">Proceed to Checkout</button>
+  </div>
+</div>
     
     
 
@@ -208,3 +334,31 @@
         input.value = Math.max(0, value);
       }
     </script>
+
+<script>
+  function getCart() {
+    return JSON.parse(localStorage.getItem('cart')) || [];
+  }
+
+  function saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  function addToCart(name, price, image, button) {
+    const quantityInput = button.parentElement.querySelector('input');
+    const quantity = parseInt(quantityInput.value);
+    if (quantity <= 0) return;
+
+    let cart = getCart();
+    const existingItem = cart.find(item => item.name === name);
+
+    if (existingItem) {
+      existingItem.quantity += quantity;
+    } else {
+      cart.push({ name, price, quantity, image });
+    }
+
+    saveCart(cart);
+    alert('Item added to cart!');
+  }
+</script>
